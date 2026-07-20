@@ -74,7 +74,7 @@
    */
 
   /* font-family */
-  --ff-poppins: 'Crimson Text', serif;
+  --ff-poppins: 'Gelasio', serif;
 
   /* font-size */
   --fs-1: 24px;
@@ -1854,9 +1854,8 @@ textarea.form-input::-webkit-resizer { display: none; }
   .contacts-list { grid-template-columns: 1fr; }
 
   .contact-info :is(.contact-link) {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    white-space: normal;
+    word-break: break-all;
   }
 
   .contact-info :is(.contact-link, time, address) {
