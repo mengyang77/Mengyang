@@ -24,58 +24,60 @@
   /* gradient */
 
   --bg-gradient-onyx: linear-gradient(
-    to bottom right, 
-    hsl(240, 1%, 25%) 3%, 
-    hsl(0, 0%, 19%) 97%
+    to bottom right,
+    hsl(38, 28%, 94%) 3%,
+    hsl(35, 22%, 88%) 97%
   );
   --bg-gradient-jet: linear-gradient(
-    to bottom right, 
-    hsla(240, 1%, 18%, 0.251) 0%, 
-    hsla(240, 2%, 11%, 0) 100%
-  ), hsl(240, 2%, 13%);
+    to bottom right,
+    hsla(38, 25%, 90%, 0.5) 0%,
+    hsla(38, 15%, 96%, 0) 100%
+  ), hsl(40, 35%, 97%);
   --bg-gradient-yellow-1: linear-gradient(
-    to bottom right, 
-    hsl(45, 100%, 71%) 0%, 
-    hsla(36, 100%, 69%, 0) 50%
+    to bottom right,
+    hsl(36, 65%, 55%) 0%,
+    hsla(30, 65%, 55%, 0) 50%
   );
   --bg-gradient-yellow-2: linear-gradient(
-    135deg, 
-    hsla(45, 100%, 71%, 0.251) 0%, 
-    hsla(35, 100%, 68%, 0) 59.86%
-  ), hsl(240, 2%, 13%);
+    135deg,
+    hsla(36, 65%, 55%, 0.35) 0%,
+    hsla(20, 65%, 60%, 0) 59.86%
+  ), hsl(40, 35%, 97%);
   --border-gradient-onyx: linear-gradient(
-    to bottom right, 
-    hsl(0, 0%, 25%) 0%, 
-    hsla(0, 0%, 25%, 0) 50%
+    to bottom right,
+    hsl(35, 20%, 85%) 0%,
+    hsla(35, 20%, 85%, 0) 50%
   );
   --text-gradient-yellow: linear-gradient(
-    to right, 
-    hsl(45, 100%, 72%), 
-    hsl(35, 100%, 68%)
+    to right,
+    hsl(36, 62%, 42%),
+    hsl(8, 55%, 70%)
   );
 
   /* solid */
 
-  --jet: hsl(0, 0%, 22%);
-  --onyx: hsl(240, 1%, 17%);
-  --eerie-black-1: hsl(240, 2%, 13%);
-  --eerie-black-2: hsl(240, 2%, 12%);
-  --smoky-black: hsl(0, 0%, 7%);
-  --white-1: hsl(0, 0%, 100%);
-  --white-2: hsl(0, 0%, 98%);
-  --orange-yellow-crayola: hsl(45, 100%, 72%);
-  --vegas-gold: hsl(45, 54%, 58%);
-  --light-gray: hsl(0, 0%, 84%);
-  --light-gray-70: hsla(0, 0%, 84%, 0.7);
-  --bittersweet-shimmer: hsl(0, 43%, 51%);
+  --jet: hsl(35, 18%, 85%);
+  --onyx: hsl(35, 20%, 90%);
+  --eerie-black-1: hsl(38, 28%, 93%);
+  --eerie-black-2: hsl(40, 40%, 98%);
+  --smoky-black: hsl(40, 30%, 95%);
+  --white-1: hsl(230, 18%, 20%);
+  --white-2: hsl(230, 16%, 22%);
+  --orange-yellow-crayola: hsl(36, 62%, 42%);
+  --vegas-gold: hsl(32, 45%, 38%);
+  --light-gray: hsl(230, 8%, 42%);
+  --light-gray-70: hsl(230, 7%, 55%);
+  --bittersweet-shimmer: hsl(0, 55%, 48%);
+  --ink: hsl(230, 22%, 15%);
+  --dusty-rose: hsl(8, 55%, 70%);
 
   /**
    * typography
    */
 
   /* font-family */
-  --ff-poppins: 'Gelasio', serif;
-
+  --ff-poppins: 'Crimson Text', serif;
+  --ff-heading: 'Cormorant Garamond', serif;
   /* font-size */
   --fs-1: 24px;
   --fs-2: 18px;
@@ -148,7 +150,7 @@ input, textarea {
 
 ::selection {
   background: var(--orange-yellow-crayola);
-  color: var(--smoky-black);
+  color: var(--ink);
 }
 
 :focus { outline-color: var(--orange-yellow-crayola); }
@@ -165,8 +167,30 @@ body { background: var(--smoky-black); }
   #REUSED STYLE
 \*-----------------------------------*/
 
-.sidebar,
 article {
+  background: var(--eerie-black-2);
+  border: 1px solid var(--jet);
+  border-radius: 20px;
+  padding: 15px;
+  box-shadow: var(--shadow-1);
+  z-index: 1;
+}
+
+.sidebar {
+  --eerie-black-1: hsl(222, 18%, 24%);
+  --eerie-black-2: hsl(222, 24%, 16%);
+  --jet: hsl(220, 14%, 30%);
+  --onyx: hsl(220, 18%, 26%);
+  --white-1: hsl(0, 0%, 100%);
+  --white-2: hsl(220, 25%, 95%);
+  --light-gray: hsl(220, 12%, 78%);
+  --light-gray-70: hsl(220, 10%, 65%);
+  --orange-yellow-crayola: hsl(42, 72%, 66%);
+  --border-gradient-onyx: linear-gradient(
+    to bottom right,
+    hsl(220, 15%, 32%) 0%,
+    hsla(220, 15%, 32%, 0) 50%
+  );
   background: var(--eerie-black-2);
   border: 1px solid var(--jet);
   border-radius: 20px;
@@ -226,6 +250,7 @@ article.active {
 .h5 {
   color: var(--white-2);
   text-transform: capitalize;
+  font-family: var(--ff-heading);   /* 新增这一行 */
 }
 
 .h2 { font-size: var(--fs-1); }
@@ -342,6 +367,7 @@ main {
   font-weight: var(--fw-500);
   letter-spacing: -0.25px;
   margin-bottom: 10px;
+  font-family: var(--ff-heading);   /* 新增这一行 */
 }
 
 .info-content .title {
@@ -459,7 +485,7 @@ main {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: hsla(240, 1%, 17%, 0.75);
+  background: hsla(40, 30%, 97%, 0.75);
   backdrop-filter: blur(10px);
   border: 1px solid var(--jet);
   border-radius: 12px 12px 0 0;
@@ -1776,13 +1802,13 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   body::-webkit-scrollbar-thumb {
     border: 5px solid var(--smoky-black);
-    background: hsla(0, 0%, 100%, 0.1);
+    background: hsla(230, 20%, 20%, 0.12);
     border-radius: 20px;
-    box-shadow: inset 1px 1px 0 hsla(0, 0%, 100%, 0.11),
-                inset -1px -1px 0 hsla(0, 0%, 100%, 0.11);
+    box-shadow: inset 1px 1px 0 hsla(230, 20%, 20%, 0.08),
+                inset -1px -1px 0 hsla(230, 20%, 20%, 0.08);
   }
 
-  body::-webkit-scrollbar-thumb:hover { background: hsla(0, 0%, 100%, 0.15); }
+  body::-webkit-scrollbar-thumb:hover { background: hsla(230, 20%, 20%, 0.2); }
 
   body::-webkit-scrollbar-button { height: 60px; }
 
